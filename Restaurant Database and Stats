@@ -1,0 +1,34 @@
+--Create a Restaurant database
+
+CREATE TABLE Restaurant (id INTEGER PRIMARY KEY, item TEXT, cusine TEXT, price INTEGER, popularity INTEGER);
+
+INSERT INTO Restaurant VALUES (1, "Cheese Burger", "American", 10.99, 49);
+INSERT INTO Restaurant VALUES (2, "Patty Melt", "American", 6.99, 51);
+INSERT INTO Restaurant VALUES (3, "Chicken Tenders", "American", 5.99, 45);
+INSERT INTO Restaurant VALUES (4, "Waffle", "Breakfast", 7.99, 61);
+INSERT INTO Restaurant VALUES (5, "Pancakes", "Breakfast", 7.99, 60);
+INSERT INTO Restaurant VALUES (6, "Burrito", "Mexican", 8.99, 66);
+INSERT INTO Restaurant VALUES (7, "Taco", "Mexican", 2.99, 78);
+INSERT INTO Restaurant VALUES (8, "Chicken Fajitas", "Mexican", 10.99, 81);
+INSERT INTO Restaurant VALUES (9, "Pizza", "Italian", 14.99, 75);
+INSERT INTO Restaurant VALUES (10, "Spicy Rigatoni", "Italian", 12.99, 98);
+INSERT INTO Restaurant VALUES (11, "Ramen", "Japanese", 9.99, 71);
+INSERT INTO Restaurant VALUES (12, "Pho", "Vietnamese", 10.99, 80);
+INSERT INTO Restaurant VALUES (13, "Sushi", "Japanese", 14.99,72);
+INSERT INTO Restaurant VALUES (14, "Empanada", "Colombian", 2.99, 96);
+INSERT INTO Restaurant VALUES (15, "Cuban Sandwich", "Cuban", 8.99, 35);
+
+--display the database ordered by price. 
+SELECT * FROM Restaurant
+ORDER BY price desc; 
+
+--what is the avg price of items in the Mexican section? 
+SELECT AVG(price) "avg Mexican item price"
+FROM Restaurant
+where cusine='Mexican'; 
+
+--what are the most 5 popular items? 
+SELECT item, price, popularity
+FROM Restaurant
+order by popularity desc
+limit 5; 
